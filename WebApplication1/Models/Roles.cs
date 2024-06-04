@@ -7,9 +7,10 @@ public class Roles
 {
     [Key]
     [Column("PK_role")]
-    public int PK_role { get; set; }
+    public int PKRole{ get; set; }
     
     [Column("name")]
     [MaxLength(100)]
-    public string name { get; set; }
+    public string RoleName { get; set; }
+    
 }
