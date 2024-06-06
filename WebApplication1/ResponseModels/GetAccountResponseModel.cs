@@ -2,11 +2,19 @@
 
 public class GetAccountResponseModel
 {
-    public string first_name { get; set; }
-    public string last_name { get; set; }
-    public string email { get; set; }
-    public string? phone { get; set; }
-    public int FK_role { get; set; }
-    
-    
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Email { get; set; }
+    public string? Phone { get; set; }
+    public string Role { get; set; }
+    public List<ShoppingCartItem> Cart { get; set; }
+    public class ShoppingCartItem
+    {
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int Amount { get; set; }
+    }
 }
+
+
+

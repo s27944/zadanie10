@@ -4,14 +4,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Zadanie10;
 
+[Table("Categories")]
 public class Categories
 {
     [Key]
-    [Column("PK_category")]
-    public int PK_category { get; set; }
-    
+    [Column("PK_Category")]
+    public int CategoryID { get; set; }
+
     [Column("name")]
     [MaxLength(100)]
-    public string name { get; set; }
-    
+    public string Name { get; set; }
+
+    public IEnumerable<Products_Categories> Products_Categories { get; set; } 
 }

@@ -3,34 +3,34 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zadanie10;
 
+[Table("Accounts")]
 public class Accounts
 {
     [Key]
-    [Column("PK_account")] 
-    public int PK_account { get; set; }
-    
-    
+    [Column("PK_account")]
+    public int AccountId { get; set; }
+
     [ForeignKey("Roles")]
-    [Column("FK_role")] 
-    public int FK_role { get; set; }
-    
+    [Column("FK_role")]
+    public int RoleId { get; set; }
+
     public Roles Roles { get; set; }
-    
+
     [Column("first_name")]
     [MaxLength(50)]
-    public string first_name { get; set; }
-    
-    
+    public string FirstName { get; set; }
+
     [Column("last_name")]
     [MaxLength(50)]
-    public string last_name { get; set; }
-    
-    
+    public string LastName { get; set; }
+
     [Column("email")]
     [MaxLength(80)]
-    public string email { get; set; }
-    
+    public string Email { get; set; }
+
     [Column("phone")]
     [MaxLength(9)]
-    public string? phone { get; set; }
+    public string? Phone { get; set; }
+
+    public IEnumerable<Shopping_Carts> Shopping_Carts { get; set; }
 }

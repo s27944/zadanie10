@@ -3,26 +3,30 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Zadanie10;
 
+[Table("Products")]
 public class Products
 {
     [Key]
     [Column("PK_product")]
-    public int PK_product { get; set; }
-    
+    public int ProductID { get; set; }
+
     [Column("name")]
     [MaxLength(100)]
-    public string name { get; set; }
-    
-    
+    public string Name { get; set; }
+
     [Column("weight")]
-    public decimal weight { get; set; }
-    
+    public decimal Weight { get; set; }
+
     [Column("width")]
-    public decimal width { get; set; }
-    
+    public decimal Width { get; set; }
+
     [Column("height")]
-    public decimal height { get; set; }
-    
+    public decimal Height { get; set; }
+
     [Column("depth")]
-    public decimal depth { get; set; }
+    public decimal Depth { get; set; }
+
+    public IEnumerable<Shopping_Carts> Shopping_Carts { get; set; }
+
+    public IEnumerable<Products_Categories> Products_Categories { get; set;}
 }
